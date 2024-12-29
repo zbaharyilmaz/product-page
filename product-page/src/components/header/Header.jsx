@@ -9,7 +9,7 @@ const Header = ({categoryList,title}) => {
   return (
 
     <div className={HeaderStyle.header}>
-      //Süslü açmaya gerek yok. HTML yazacagız Jsx e.
+      {/* Süslü açmaya gerek yok. HTML yazacagız Jsx e. */}
       <h1>{title}</h1>
       <div className={HeaderStyle.btn}>  
       {

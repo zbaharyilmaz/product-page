@@ -1,5 +1,5 @@
 import Card from "./ProductCard";
-import "./Products.scss"
+import "./Products.scss";
 
 //React'te, veriler çoğunlukla üst bileşenden alt bileşene props olarak aktarılır. Bu akış tek yönlüdür, yani üst bileşen bir props verisini alt bileşene gönderir, ancak alt bileşen bu veriyi değiştiremez.
 
@@ -8,7 +8,7 @@ const ProductList = ({proList}) => {
 //  console.log(products)
   return (
     <div className="product-list">
-      //Js kodu yazdığımız için Jsx e süslü aç.
+      {/* Js kodu yazdığımız için Jsx e süslü aç. */}
       {
         proList.map((product)=>
         (<Card key={product.id} product={product}/>

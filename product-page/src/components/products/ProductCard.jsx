@@ -4,11 +4,15 @@
 
 const Card = ({product}) => {
   return (
-    <div className="product-card">
+    <div className="card">
     
-            <h3 className="price">{product.price}</h3>
+            <div className="price">
+                <h3>{product.price} $</h3>
+            </div>
             <img src={product.image} alt=""/>
-            <h2 className="card-over">{product.title}</h2>
+            <div className="card_over">
+                <h2>{product.title}</h2>
+            </div>
       
     </div>
   );
