@@ -1,51 +1,38 @@
-name: Deploy React App
+name: Deploy React App to GitHub Pages
 
 on:
   push:
     branches:
-      - master
       - main
+      - master
 
 jobs:
   build:
-    name: Build
+    name: Build and Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Configure React homepage
-        run: |
-          echo "Configuring homepage in package.json"
-          REPO_NAME=${{ github.event.repository.name }}
-          USER_NAME=${{ github.event.repository.owner.login }}
-          jq ".homepage=\"https://$USER_NAME.github.io/$REPO_NAME\"" package.json > tmp.json
-          mv tmp.json package.json
-
-      - name: Build project
-        run: npm run build
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      # 2. Setup pnpm (pnpm kullanıyorsanız bu adımı ekleyin)
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: build
+          version: '7'
 
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
+      # 3. Install dependencies with pnpm
+      - name: Install dependencies
+        run: pnpm install
+
+      # 4. Build the React app
+      - name: Build React app
+        run: pnpm run build
+
+      # 5. Deploy to GitHub Pages (Deploy to gh-pages branch)
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages   # Deploy edilen branch
+          folder: build      # Derlenmiş dosyaların bulunduğu klasör
