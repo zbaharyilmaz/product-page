@@ -1,32 +1,8 @@
- # Product List Project
+# Product List Project
 
 ## Description
 The project aims to create a **Product List App** where users can view a list of products with details such as price, title, and image. The app will also include category filters and hover effects to reveal additional information on each product card.
 
-## Project Skeleton
-- Product List App(folder)
-|
-|----readme.md        
-SOLUTION
-├── public
-│     └── index.html
-├── src
-┣ 📂components
-┃ ┣ 📂Header
-┃ ┃ ┣ 📜Header.jsx
-┃ ┃ ┗ 📜Header.
-┃ ┗ 📂ProductCard
-┃ ┃ ┣ 📜ProductCard.jsx
-┃ ┃ ┗ 📜ProductCard.scss
-┣ 📂helper
-┃ ┗ 📜data.js
-┣ 📂scss
-┃ ┣ 📜_mixins.scss
-┃ ┣ 📜_reset.scss
-┃ ┗ 📜_variables.scss
-┣ 📜App.js
-┣ 📜App.scss
-┗ 📜index.js
 ## Expected Outcome
 The app will display a product list with:
 
