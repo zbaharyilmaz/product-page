@@ -20,11 +20,6 @@ Feel free to **fork** this repository and contribute by creating **pull requests
 - **GitHub Pages** (for deployment)
 - **JavaScript (ES6+ syntax)**
 
-# Van Gogh Art Gallery
-
-Welcome to the Van Gogh Art Gallery project! This web application showcases the iconic artworks of Vincent Van Gogh, providing an interactive and visually appealing gallery experience. The app is built using **React** for the frontend and **Sass** for styling, ensuring a modern and smooth user interface.
-
-
 ## Project Structure
 
 ```plaintext
